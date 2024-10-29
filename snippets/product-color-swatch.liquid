@@ -1,0 +1,24 @@
+{% if product.options_by_name.Color != blank %}
+  <product-color-swatch class="product-color-labels">
+    {% for value in product.options_by_name.Color.values %}
+      <input
+        type="radio"
+        id="{{ section_id }}--{{ product.id }}--{{ forloop.index0 }}"
+        name="product-color-label-{{ section_id }}-{{ product.id }}"
+        {% if forloop.first %}
+          checked
+        {% endif %}
+        class="hidden"
+      >
+      {% assign down_value = value | downcase %}
+      <label
+        for="{{ section_id }}--{{ product.id }}--{{ forloop.index0 }}"
+        style="--back-color: {{ down_value | replace: 'clear', 'gainsboro' | replace: 'white', 'gainsboro' }}"
+        title="{{ value }}"
+        data-color-value="{{ down_value }}"
+      >
+        <span class="hidden">{{- value -}}</span>
+      </label>
+    {% endfor %}
+  </product-color-swatch>
+{% endif %}

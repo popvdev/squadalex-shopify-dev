@@ -1,0 +1,42 @@
+.product-color-labels {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.product-color-labels label {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  background-color: var(--back-color);
+  margin-right: 8px;
+  cursor: pointer;
+  position: relative;
+}
+
+.product-color-labels input:checked + label::before {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: transparent;
+  border: 1px solid var(--back-color);
+  top: -2px;
+  left: -2px;
+}
+
+.product-color-labels input:checked + label::after {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  background-color: transparent;
+  /* border: 1px solid #ffffff; */
+  top: 0px;
+  left: 0px;
+}
