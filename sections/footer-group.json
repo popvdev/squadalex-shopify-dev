@@ -2,6 +2,9 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "product-list": {
+      "type": "product-list",
+    },
     "footer": {
       "type": "footer",
       "settings": {
@@ -21,6 +24,7 @@
     }
   },
   "order": [
+    "product-list",
     "footer"
   ]
 }
