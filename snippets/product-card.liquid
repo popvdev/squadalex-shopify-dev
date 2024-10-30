@@ -77,7 +77,7 @@
       <a class="product-lsit__item-heading" href="{{ product.url }}">{{ product.title }}</a>
       <span class="product-lsit__item-price">{{ product.price }}</span>
     </div>
-    {% assign rating = product.metafields.custom.reviews.value.rating | floor %}
+    {% assign rating = product.metafields.custom.reviews.value %}
     {% if rating != blank %}
       <div class="product-lsit__item-reviews">
         {% for i in (1..5) %}
@@ -88,10 +88,33 @@
           {% endif %}
         {% endfor %}
         {% if product.metafields.custom.rating_count != blank %}
-          <span class="rating-count caption">
+          <span class="rating-count">
             <span aria-hidden="true">({{ product.metafields.custom.rating_count }})</span>
             <span class="visually-hidden">
               {{- product.metafields.custom.rating_count }}
+              {{ 'accessibility.total_reviews' | t -}}
+            </span>
+          </span>
+        {% endif %}
+      </div>
+    {% else %}
+      <div class="product-lsit__item-reviews">
+        {% for i in (1..5) %}
+          {% render 'icon-star-empty' %}
+        {% endfor %}
+        {% if product.metafields.custom.rating_count != blank %}
+          <span class="rating-count">
+            <span aria-hidden="true">({{ product.metafields.custom.rating_count }})</span>
+            <span class="visually-hidden">
+              {{- product.metafields.custom.rating_count }}
+              {{ 'accessibility.total_reviews' | t -}}
+            </span>
+          </span>
+        {% else %}
+          <span class="rating-count">
+            <span aria-hidden="true">({{ 0 }})</span>
+            <span class="visually-hidden">
+              {{- 0 }}
               {{ 'accessibility.total_reviews' | t -}}
             </span>
           </span>

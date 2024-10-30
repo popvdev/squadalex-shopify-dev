@@ -1,5 +1,6 @@
 .product-color-labels {
   display: flex;
+  padding: 1px 0;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -19,22 +20,22 @@
   display: block;
   content: '';
   position: absolute;
-  width: 20px;
-  height: 20px;
-  border-radius: 10px;
+  width: 22px;
+  height: 22px;
+  border-radius: 11px;
   background-color: transparent;
   border: 1px solid var(--back-color);
-  top: -2px;
-  left: -2px;
+  top: -3px;
+  left: -3px;
 }
 
 .product-color-labels input:checked + label::after {
   display: block;
   content: '';
   position: absolute;
-  width: 16px;
-  height: 16px;
-  border-radius: 8px;
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
   background-color: transparent;
   /* border: 1px solid #ffffff; */
   top: 0px;
